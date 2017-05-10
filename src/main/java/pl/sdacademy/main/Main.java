@@ -59,6 +59,72 @@ public class Main {
 		// wypisz
 		tableUtils.print(iActionTable);
 
+		System.out.println("=============");
+
+		// wypelniamy tablice wartosciami
+		int[] intArray = new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+		tableUtils.print(intArray);
+
+		// co druga liczbe zwiekszamy o wartosc jej poprzednika
+		for (int i = 0; i < intArray.length; i++) {
+			if (i > 0 && i % 2 == 0) {
+				intArray[i] += intArray[i - 1];
+			}
+		}
+
+		System.out.println();
+		tableUtils.print(intArray);
+
+		// kazda parzysta dzielimy przez 2
+		for (int i = 0; i < intArray.length; i++) {
+			if (intArray[i] % 2 == 0) {
+				intArray[i] /= 2;
+			}
+		}
+
+		System.out.println();
+		tableUtils.print(intArray);
+
+		// suma wszystkich elementow
+		int sum = 0;
+		for (int element : intArray) {
+			sum += element;
+		}
+		System.out.println("\nSuma elementow: " + sum);
+
+		/*
+		 * System.out.println(
+		 * "============= to samo ale na tablicy typu Object!");
+		 * 
+		 * // wypelniamy tablice wartosciami int n = 10; Object[] objectArray =
+		 * new Object[n]; for (int k = 0; k < n; k++) { objectArray[k] = k + 1;
+		 * } tableUtils.print(objectArray);
+		 * 
+		 * // co druga liczbe zwiekszamy o wartosc jej poprzednika for (int i =
+		 * 0; i < objectArray.length; i++) { if (i > 0 && i % 2 == 0) { int
+		 * value = Integer.parseInt(objectArray[i - 1] + ""); objectArray[i] +=
+		 * objectArray[i-1];
+		 * 
+		 * } }
+		 * 
+		 * System.out.println(); tableUtils.print(objectArray);
+		 * 
+		 * // kazda parzysta dzielimy przez 2 for (int i = 0; i <
+		 * objectArray.length; i++) { if (objectArray[i] % 2 == 0) {
+		 * objectArray[i] /= 2; } }
+		 * 
+		 * System.out.println(); tableUtils.print(objectArray);
+		 * 
+		 * // suma wszystkich elementow int sum = 0; for (int element :
+		 * objectArray) { sum += element; } System.out.println(
+		 * "\nSuma elementow: " + sum);
+		 */
+		System.out.println("=================");
+
+		int[] randomTable = tableUtils.generateNumbers(10, 0, 123);
+		Object[] tulipan = { 1, 2, 3 };
+		tableUtils.printStream(tulipan);
+
 	}
 
 	/**
