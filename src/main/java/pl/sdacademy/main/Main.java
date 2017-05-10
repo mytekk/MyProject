@@ -7,6 +7,7 @@ import pl.sdacademy.model.Cat;
 import pl.sdacademy.model.Dog;
 import pl.sdacademy.model.OpelCar;
 import pl.sdacademy.model.RenaultCar;
+import pl.sdacademy.utils.TableUtils;
 
 public class Main {
 
@@ -44,6 +45,19 @@ public class Main {
 		}
 
 		voiceFromAnimals();
+
+		// tworze obiekt klasy, w ktorej mam funkcje dotyczace tablic
+		TableUtils tableUtils = new TableUtils();
+
+		// wypisz
+		tableUtils.print(iActionTable);
+
+		// zamiana
+		System.out.println("--------");
+		tableUtils.changeElement(iActionTable, 0, 1);
+
+		// wypisz
+		tableUtils.print(iActionTable);
 
 	}
 
