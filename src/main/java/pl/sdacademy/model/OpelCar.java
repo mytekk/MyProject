@@ -18,4 +18,9 @@ public class OpelCar extends Car {
 		System.out.println("Zatankowalem!");
 	}
 
+	@Override
+	public String getInfo() {
+		return super.getInfo() + "Opel.";
+	}
+
 }
