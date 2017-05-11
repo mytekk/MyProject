@@ -7,7 +7,7 @@ import org.junit.Test;
 public class ISortAlgorithmTest {
 
 	// zmienne globalne klasy
-	ISortAlgorithm sortAlgorithm = null;
+	ISortAlgorithm sortAlgorithm = new SortAlgorithm();
 	int[] tableToSort = { 1, 2, 4, 3 };
 	int[] sortedAscending = { 1, 2, 3, 4 };
 	int[] sortedDescending = { 4, 3, 2, 1 };
