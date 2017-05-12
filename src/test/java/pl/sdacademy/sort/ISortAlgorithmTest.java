@@ -163,4 +163,32 @@ public class ISortAlgorithmTest {
 		assertTrue(isAllElementEqual);
 	}
 
+	/**
+	 * test sprawdza poprawnośc działania metody isTableEqual tutaj chcemy, zeby
+	 * funkcja zwrocila true dla dwoch takich samych tablic
+	 */
+	public void shouldTestIsTableEqual() {
+		int[] table1 = { 87, 5, 4, 2, 1 };
+		int[] table2 = { 87, 5, 4, 2, 1 };
+
+		assertTrue(isTableEqual(table1, table2));
+	}
+
+	/**
+	 * test sprawdza poprawnośc działania metody isTableEqual tutaj chcemy, zeby
+	 * funkcja zwrocila false dla dwoch roznych tablic czyli jesli test zwroci
+	 * false, to znaczy, ze test sie udal
+	 */
+	public void shouldTestIsTableNotEqual() {
+		int[] table1 = { 87, 5, 4, 2, 1 };
+		int[] table2 = { 187, 5, 4, 2, 1 };
+
+		assertFalse(isTableEqual(table1, table2));
+	}
+
+	private void assertFalse(boolean tableEqual) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
