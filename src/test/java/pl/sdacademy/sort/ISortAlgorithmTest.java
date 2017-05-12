@@ -39,7 +39,7 @@ public class ISortAlgorithmTest {
 		while (i < tableToSort.length && isAllElementEqual) {
 			isAllElementEqual = tableToSort[i] == sortedTable[i];
 			i++;
-			if (!isAllElementEqual) {
+			if (!isAllElementEqual || i == tableToSort.length) {
 				break;
 			}
 		}
@@ -57,12 +57,12 @@ public class ISortAlgorithmTest {
 
 		// when
 		sortAlgorithm.sort(tableToSort, true); // ascending
-		sortAlgorithm.sort(tableToSort, false); // descending
-
-		// then
 		boolean isAscendingOK = isTableEqual(tableToSort, sortedAscending);
+
+		sortAlgorithm.sort(tableToSort, false); // descending
 		boolean isDescendingOK = isTableEqual(tableToSort, sortedDescending);
 
+		// then
 		assertTrue(isAscendingOK && isDescendingOK);
 	}
 
