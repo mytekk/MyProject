@@ -39,9 +39,9 @@ public class ISortAlgorithmTest {
 		while (i < tableToSort.length && isAllElementEqual) {
 			isAllElementEqual = tableToSort[i] == sortedTable[i];
 			i++;
-			if (!isAllElementEqual || i == tableToSort.length) {
-				break;
-			}
+			// if (!isAllElementEqual || i == tableToSort.length) {
+			// break;
+			// }
 		}
 		return isAllElementEqual;
 	}
