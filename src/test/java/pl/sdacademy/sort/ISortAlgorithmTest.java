@@ -56,10 +56,10 @@ public class ISortAlgorithmTest {
 		// given
 
 		// when
-		sortAlgorithm.sort(tableToSort, true); // ascending
+		sortAlgorithm.bubleSort(tableToSort, true); // ascending
 		boolean isAscendingOK = isTableEqual(tableToSort, sortedAscending);
 
-		sortAlgorithm.sort(tableToSort, false); // descending
+		sortAlgorithm.bubleSort(tableToSort, false); // descending
 		boolean isDescendingOK = isTableEqual(tableToSort, sortedDescending);
 
 		// then

@@ -7,9 +7,12 @@ public interface ISortAlgorithm {
 	// odpale drugą definicje ale z juz ustawionym jednym argumentem
 
 	default void sort(int[] array) {
-		sort(array, true);
+		bubleSort(array, true);
 	}
 
-	void sort(int[] array, boolean ascending);
+	void bubleSort(int[] array, boolean ascending);
+
+	default void quickSort(int[] tableToSort) {
+	}
 
 }
