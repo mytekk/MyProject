@@ -34,8 +34,14 @@ public class SortAlgorithm implements ISortAlgorithm {
 
 		// POCZATEK TESTOWANIA METODY QUICKSORT
 		int[] tableToSort = { 7, 2, 4, 7, 3, 1, 4, 6, 5, 8, 3, 9, 2, 6, 7, 6, 3 };
-
-		sortAlgorithm.quickSort(tableToSort);
+		
+		System.out.println(Arrays.toString(tableToSort));
+		System.out.println("++++++++++++++++++");
+		
+		int firstIndex = 0;
+		int lastIndex = tableToSort.length;
+		
+		sortAlgorithm.quickSort(tableToSort, firstIndex, lastIndex);
 
 	}
 
@@ -77,33 +83,37 @@ public class SortAlgorithm implements ISortAlgorithm {
 		array[i + 1] = tmp;
 	}
 
-	public void quickSort(int[] array) {
+	/**
+	 * Sortowanie szybkie
+	 */
+	public void quickSort(int[] array, int firstIndex, int lastIndex) {
 		// wypisanie tablicy wejsciowej
-		System.out.println(Arrays.toString(array));
+		//System.out.println("Wypisanie tablicy wejsciowej:");
+		//System.out.println(Arrays.toString(array));
+		System.out.println("to co przychodzi: " + lastIndex);
+		//lastIndex = lastIndex - 1;
 
-		int firstIndex = 0;
-		int lastIndex = array.length - 1;
-		int tmp = (firstIndex + lastIndex) / 2; // indeks srodkowego elementu
+		int tmp = (firstIndex + (lastIndex-1)) / 2; // indeks srodkowego elementu
 		int piwot = array[tmp]; // piwot to wartosc srodkowego elementu
 
 		// piwot wymieniam z ostatnim elementem tablicy
-		array[tmp] = array[lastIndex];
-		array[lastIndex] = piwot;
-
-		// wypisanie tablicy
-		System.out.println(Arrays.toString(array));
+		array[tmp] = array[lastIndex-1];
+		array[lastIndex-1] = piwot;
+		
+		int j = firstIndex;
 
 		// dwa "wskazniki":
 		// Wskaźnik i będzie przeglądał zbiór do przedostatniej pozycji.
 		// Wskaźnik j zapamiętuje ostatnie miejsce wstawienia elementu
 		// mniejszego od
 		// piwotu
-		int j = 0;
+		System.out.println("petle robie do: " + (lastIndex - 1));
 		for (int i = 0; i < lastIndex - 1; i++) {
 			// jesli biezacy element tablicy jest mniejszy od piwotu
 			// to wymień go z elementem na pozycji j-tej
 			// po tej wymianie j przesun o jedna pozycje
 			if (array[i] < piwot) {
+				System.out.println("iteracja: i = " + i + ", j = " + j);
 				int tmpElement = array[i];
 				array[i] = array[j];
 				array[j] = tmpElement;
@@ -114,12 +124,26 @@ public class SortAlgorithm implements ISortAlgorithm {
 
 		// po zakonczeniu petli piwot wymieniam z elementem na pozycji j-tej
 		// (piwot to teraz ostatni element)
-		array[lastIndex] = array[j];
+		array[lastIndex-1] = array[j];
 		array[j] = piwot;
 
 		// koniec podzialu na partycje
 		// wypisanie tablicy
+		System.out.println("Wypisanie tablicy po podziale na partycje:");
 		System.out.println(Arrays.toString(array));
+		
+		//wywolanie rekurencyjne dla utworzonych partycji
+		
+		if (firstIndex < j - 1) {
+			System.out.println("Kolejne wywolanie typu PIERWSZEGO dla: firstIndex = " + firstIndex + ", (j-1) = " + (j-1));
+			this.quickSort(array, firstIndex, j - 1);
+		}
+		if (j + 1 < lastIndex) {
+			System.out.println("Kolejne wywolanie typu DRUGIEGO dla: (j+1) = " + (j+1) + ", firstIndex = " + firstIndex);
+			this.quickSort(array, j + 1, lastIndex);
+		}
+		
+		
 	}
 
 }

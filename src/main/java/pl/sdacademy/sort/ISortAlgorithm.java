@@ -12,7 +12,7 @@ public interface ISortAlgorithm {
 
 	void bubleSort(int[] array, boolean ascending);
 
-	default void quickSort(int[] tableToSort) {
+	default void quickSort(int[] tableToSort, int firstIndex, int lastIndex) {
 	}
 
 }
