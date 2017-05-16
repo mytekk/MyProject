@@ -2,55 +2,45 @@ package pl.sdacademy.tree;
 
 public class Node {
 
-	String value;
-	Node parent;
-	Node left;
-	Node right;
+    Node parent;
+    Node left;
+    Node right;
+    int value;
 
-	// konstruktor
-	public Node(String data) { // tworzac nowego noda, podajemy jedynie value,
-								// reszta wypelnia sie sama
-		setValue(data);
-	}
+    public Node(int data) {
+	setValue(data);
+    }
 
-	// konstruktor dwuargumentowy
-	public Node(String data, Node node) { // tworzac nowego noda, podajemy
-											// jedynie value, reszta wypelnia
-											// sie sama
-		setValue(data);
-		setParent(node);
-	}
+    public Node getParent() {
+	return parent;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public void setParent(Node parent) {
+	this.parent = parent;
+    }
 
-	public void setValue(String value) {
-		this.value = value;
-	}
+    public Node getLeft() {
+	return left;
+    }
 
-	public Node getParent() {
-		return parent;
-	}
+    public void setLeft(Node left) {
+	this.left = left;
+    }
 
-	public void setParent(Node parent) {
-		this.parent = parent;
-	}
+    public Node getRight() {
+	return right;
+    }
 
-	public Node getLeft() {
-		return left;
-	}
+    public void setRight(Node right) {
+	this.right = right;
+    }
 
-	public void setLeft(Node left) {
-		this.left = left;
-	}
+    public int getValue() {
+	return value;
+    }
 
-	public Node getRight() {
-		return right;
-	}
-
-	public void setRight(Node right) {
-		this.right = right;
-	}
+    public void setValue(int value) {
+	this.value = value;
+    }
 
 }
