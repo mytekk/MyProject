@@ -43,6 +43,15 @@ public class TableUtils implements ITableUtils {
 		}
 	}
 
+	public String print2(int[] table) {
+		String result = "";
+		// petla foreach
+		for (int element : table) {
+			result += element + ", ";
+		}
+		return result;
+	}
+
 	public int[] generateNumbers(int length, int from, int to) {
 		if (from >= to) {
 			throw new IllegalArgumentException("Exception: " + from + " >= " + to);
