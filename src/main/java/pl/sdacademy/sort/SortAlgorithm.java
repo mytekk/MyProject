@@ -34,14 +34,13 @@ public class SortAlgorithm implements ISortAlgorithm {
 
 		// POCZATEK TESTOWANIA METODY QUICKSORT
 		int[] tableToSort = { 7, 2, 4, 7, 3, 1, 4, 6, 5, 8, 3, 9, 2, 6, 7, 6, 3 };
-		// int[] tableToSort = { 2, 4, 3, 1, 4, 3, 3, 2 };
 
 		System.out.println(Arrays.toString(tableToSort));
 		System.out.println("===================================");
 
 		int firstIndex = 0;
-		int lastIndex = tableToSort.length;
-
+		int lastIndex = tableToSort.length - 1;
+		
 		sortAlgorithm.quickSort(tableToSort, firstIndex, lastIndex);
 
 	}
@@ -84,32 +83,32 @@ public class SortAlgorithm implements ISortAlgorithm {
 		array[i + 1] = tmp;
 	}
 
+	
 	/**
 	 * Sortowanie szybkie
+	 * na podstawie: http://eduinf.waw.pl/inf/alg/003_sort/0018.php
 	 */
 	public void quickSort(int[] array, int firstIndex, int lastIndex) {
 		System.out.println("-------------------------");
-		// wypisanie tablicy wejsciowej
-		// System.out.println("Wypisanie tablicy wejsciowej:");
-		// System.out.println(Arrays.toString(array));
-		System.out.println("Wywołąnie a argumentami: firstIndex: " + firstIndex + ", lastIndex: " + lastIndex);
-		// lastIndex = lastIndex - 1;
-
+		System.out.println("Wywołano funkcję z argumentami: firstIndex: " + firstIndex + ", lastIndex: " + lastIndex);
+		
 		System.out.println("Oto pod-tablica do posortowania:");
-		for (int z = firstIndex; z < lastIndex; z++) {
+		for (int z = firstIndex; z <= lastIndex; z++) {
 			System.out.print("array[" + z + "]: " + array[z] + ", ");
 		}
 		System.out.println();
-
+		
+		
 		int tmp = (firstIndex + lastIndex) / 2; // indeks srodkowego
 												// elementu
 		int piwot = array[tmp]; // piwot to wartosc srodkowego elementu
+		
 		System.out.println("Index elementu środkowego: " + tmp);
 		System.out.println("Piwot: " + piwot);
 
 		// piwot wymieniam z ostatnim elementem tablicy
-		array[tmp] = array[lastIndex - 1];
-		array[lastIndex - 1] = piwot;
+		array[tmp] = array[lastIndex];
+		array[lastIndex] = piwot;
 
 		int j = firstIndex;
 
@@ -118,14 +117,14 @@ public class SortAlgorithm implements ISortAlgorithm {
 		// Wskaźnik j zapamiętuje ostatnie miejsce wstawienia elementu
 		// mniejszego od
 		// piwotu
-		System.out.println("Poczatek petli, petle robie do: " + (lastIndex - 1));
-		for (int i = firstIndex; i < lastIndex - 1; i++) {
+		System.out.println("Poczatek petli, petle robie do: " + lastIndex);
+		for (int i = firstIndex; i <= lastIndex; i++) {
 			// jesli biezacy element tablicy jest mniejszy od piwotu
 			// to wymień go z elementem na pozycji j-tej
 			// po tej wymianie j przesun o jedna pozycje
 			if (array[i] < piwot) {
 				System.out.println(
-						"iteracja petli: i = " + i + ", j = " + j + ", piwot: " + piwot + ", wartosc: " + array[i]);
+						"znaleziono element mniejszy od piwotu, iteracja petli: i = " + i + ", j = " + j + ", piwot: " + piwot + ", wartosc: " + array[i]);
 				int tmpElement = array[i];
 				array[i] = array[j];
 				array[j] = tmpElement;
@@ -136,25 +135,24 @@ public class SortAlgorithm implements ISortAlgorithm {
 
 		// po zakonczeniu petli piwot wymieniam z elementem na pozycji j-tej
 		// (piwot to teraz ostatni element)
-		array[lastIndex - 1] = array[j];
+		array[lastIndex] = array[j];
 		array[j] = piwot;
 
 		System.out.println("koncowa wartosc j: " + j);
-		System.out.println("array od j: " + array[j] + " array od piwot: " + piwot);
+		System.out.println("Sprawdzenie: array[j]: " + array[j] + ", array od piwot: " + piwot);
 
-		// koniec podzialu na partycje
-		// wypisanie tablicy
+		// koniec podzialu na partycje, wypisanie zmodyfikowanej tablicy
 		System.out.println("Wypisanie tablicy po podziale na partycje:");
 		System.out.println(Arrays.toString(array));
 
 		// wywolanie rekurencyjne dla utworzonych partycji
 		if (firstIndex < j - 1) {
 			System.out.println("Kolejne wywolanie typu PIERWSZEGO dla: firstIndex = " + firstIndex + ", j = " + j);
-			this.quickSort(array, firstIndex, j);
+			this.quickSort(array, firstIndex, j - 1);
 		}
 		if (j + 1 < lastIndex) {
 			System.out
-					.println("Kolejne wywolanie typu DRUGIEGO dla: (j+1) = " + (j + 1) + ", lastIndex = " + lastIndex);
+					.println("Kolejne wywolanie typu DRUGIEGO dla: (j+1) = " + (j + 1) + ", lastIndex = " + (lastIndex));
 			this.quickSort(array, j + 1, lastIndex);
 		}
 	}

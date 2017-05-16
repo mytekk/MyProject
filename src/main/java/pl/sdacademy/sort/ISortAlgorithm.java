@@ -15,4 +15,5 @@ public interface ISortAlgorithm {
 	default void quickSort(int[] tableToSort, int firstIndex, int lastIndex) {
 	}
 
+
 }
