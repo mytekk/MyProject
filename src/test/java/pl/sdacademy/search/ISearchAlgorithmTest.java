@@ -27,6 +27,26 @@ public class ISearchAlgorithmTest {
 		invalidIndex = -1;
 	}
 
+	/**
+	 * sprawdza, czy metoda znajduje element w jakiejs randomowej tablicy wiemy,
+	 * ze element znajduje sie w tej tablicy
+	 */
+	@Test
+	public void shouldFindElementInARandomArrayFirstVersion() {
+		// given
+		int valueToSearch = 4;
+		int expectedResult = 3; // bo liczba 4 jest pod indeksem 3 w tablicy
+								// arrayToSearch
+
+		// when
+		int receivedResult = mySearchAlgorithm.search(arrayToSearch, valueToSearch);
+
+		// then
+		boolean isOK = (receivedResult == expectedResult);
+
+		assertTrue("Can't find element: " + valueToSearch + " in array: " + myTableUtils.print2(arrayToSearch), isOK);
+	}
+
 	// metoda pomocnicza
 	private boolean shouldFindElementInArray(int valueToSearch, int expectedResult, int[] array) {
 		// given
