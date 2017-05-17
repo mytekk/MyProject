@@ -14,7 +14,7 @@ public class NaiveSearchAlgorithm implements ISearchAlgorithm {
 
 	@Override
 	public int search(int[] array, int value) {
-		// not implemented
+		// not implemented - specjalnie
 		return -1;
 	}
 
