@@ -4,6 +4,6 @@ public interface ISearchAlgorithm {
 
 	public void search(int[] array);
 
-	int search(int[] array, int value);
+	int search(int[] array, int value) throws Exception;
 
 }

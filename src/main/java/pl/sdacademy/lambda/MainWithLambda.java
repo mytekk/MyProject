@@ -8,7 +8,7 @@ public class MainWithLambda {
 		// stworzeniu tego obiektu, pomiędzy klamerkami musze zdefiniowac
 		// wszystkie funkcje wymagane przez interfejs
 		// ale UWAGA - nie piszę funkcji, tylko wyrażenie lambda, które
-		// robi to samo co metoda, która musiałbym tu wpisać
+		// robi to samo co metoda, którą musiałbym tu wpisać
 
 		ISumInt object = (n) -> {
 			int result = 0;

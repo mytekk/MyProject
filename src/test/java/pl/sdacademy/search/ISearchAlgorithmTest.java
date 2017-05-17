@@ -30,9 +30,11 @@ public class ISearchAlgorithmTest {
 	/**
 	 * sprawdza, czy metoda znajduje element w jakiejs randomowej tablicy wiemy,
 	 * ze element znajduje sie w tej tablicy
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void shouldFindElementInARandomArrayFirstVersion() {
+	public void shouldFindElementInARandomArrayFirstVersion() throws Exception {
 		// given
 		int valueToSearch = 4;
 		int expectedResult = 3; // bo liczba 4 jest pod indeksem 3 w tablicy
@@ -48,7 +50,7 @@ public class ISearchAlgorithmTest {
 	}
 
 	// metoda pomocnicza
-	private boolean shouldFindElementInArray(int valueToSearch, int expectedResult, int[] array) {
+	private boolean shouldFindElementInArray(int valueToSearch, int expectedResult, int[] array) throws Exception {
 		// given
 
 		// when
@@ -63,9 +65,11 @@ public class ISearchAlgorithmTest {
 	/**
 	 * sprawdza, czy metoda znajduje element w jakiejs randomowej tablicy wiemy,
 	 * ze element znajduje sie w tej tablicy
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void shouldFindElementInARandomArray() {
+	public void shouldFindElementInARandomArray() throws Exception {
 		// given
 		int valueToSearch = 4;
 		int expectedResult = 3;
@@ -81,9 +85,11 @@ public class ISearchAlgorithmTest {
 	/**
 	 * sprawdza, czy metoda znajduje element w posortowanej tablicy wiemy, ze
 	 * element znajduje sie w tej tablicy
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void shouldFindElementInSortedArray() {
+	public void shouldFindElementInSortedArray() throws Exception {
 		// given
 		int valueToSearch = 23;
 		int expectedResult = 1;
@@ -99,9 +105,11 @@ public class ISearchAlgorithmTest {
 	/**
 	 * sprawdza, czy funkcja zwroci jakis przykladowy nieprawidlowy
 	 * (nieistniejacy) indeks, jesli nie odnaleziono elementu w tablicy
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void shouldReturnInvalidIndexIfElementNotPresent() {
+	public void shouldReturnInvalidIndexIfElementNotPresent() throws Exception {
 		// given
 		int valueToSearch = 31;
 
@@ -122,9 +130,11 @@ public class ISearchAlgorithmTest {
 	/**
 	 * sprawdza, czy funkcja zwroci jakis przykladowy nieprawidlowy
 	 * (nieistniejacy) indeks, jesli wejsciowa tablica ma dlugosc zero
+	 * 
+	 * @throws Exception
 	 */
 	@Test
-	public void shouldReturnInvalidIndexIfArrayLenghtIsZero() {
+	public void shouldReturnInvalidIndexIfArrayLenghtIsZero() throws Exception {
 		// given
 		int valueToSearch = 2;
 

@@ -13,22 +13,28 @@ public class SearchAlgorithm implements ISearchAlgorithm {
 	}
 
 	@Override
-	public int search(int[] array, int value) {
+	public int search(int[] array, int value) throws Exception {
 		int i = 0;
 		int valueToReturn = -1;
 
-		while (i < array.length && valueToReturn == -1) {
-			if (array[i] == value) {
-				valueToReturn = i;
+		if (array == null) {
+			throw new Exception("Array is null!");
+		} else if (array.length == 0) {
+			return -1;
+		} else {
+			while (i < array.length && valueToReturn == -1) {
+				if (array[i] == value) {
+					valueToReturn = i;
+				}
+				i++;
 			}
-			i++;
 		}
 
 		return valueToReturn;
 	}
 
 	// pisanie tutaj maina jest złą praktyką!!!
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		SearchAlgorithm qwerty = new SearchAlgorithm();
 		int[] arrayToSearch;
 		arrayToSearch = new int[] { 6, 1, 8, 4, 9, 9, 5, 8, 3 };
