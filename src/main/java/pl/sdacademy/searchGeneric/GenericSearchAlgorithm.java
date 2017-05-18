@@ -12,8 +12,13 @@ public class GenericSearchAlgorithm<T> implements IGenericSearchAlgorithm<T> {
 		int valueToSearch = 4;
 
 		int result = myGenericSearchAlgorithm.search(arrayToSearch, n -> n == valueToSearch);
-		// powyżej w drugim argumencie podaję predykat: predykat sprawdza, czy
+		// powyżej w drugim argumencie podaję predykat (a dokładniej:
+		// implementację
+		// metody "test" interfejsu, który jest predykatem): predykat sprawdza,
+		// czy
 		// jakaś wartość n jest równa zadanej wartości valueToSearch
+		// w tej implementacji pierwsze n to argument metody, a to co jest na
+		// prawo: jej ciało
 
 		System.out.println("Pozycja na której znaleziono element " + valueToSearch + " to: " + result);
 	}

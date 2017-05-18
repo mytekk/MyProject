@@ -8,19 +8,15 @@ public class PredicateExample {
 
 		Predicate<Integer> condition = p -> p == 0;
 		// definicja predykatu o nazwie condition, ktory przyjmuje do
-		// sprawdzenia
-		// integery i sprawdza czy sa one rowne zero
+		// sprawdzenia integery i sprawdza czy sa one rowne zero
 
 		int number = 5;
-
 		checkPredicate(condition, number);
 
 		number = 0;
-
 		checkPredicate(condition, number);
 
 		number = 99;
-
 		// wrzucam inny predykat: czy liczba jest rowna 99?
 		checkPredicate(p -> p == 99, number);
 
