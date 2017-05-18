@@ -25,7 +25,7 @@ public class IGenericSearchAlgorithmTest {
 		sortedArrayToSearch = new Integer[] { 1, 23, 55, 66, 77, 88, 9012 };
 		emptyArray = new Integer[0];
 		myTableUtils = new TableUtils();
-		myGenericSearchAlgorithm = new NaiveGenericSearchAlgorithm<Integer>();
+		myGenericSearchAlgorithm = new GenericSearchAlgorithm<Integer>();
 		invalidIndex = -1;
 	}
 
