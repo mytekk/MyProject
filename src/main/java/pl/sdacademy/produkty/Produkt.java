@@ -1,4 +1,4 @@
-package produkty;
+package pl.sdacademy.produkty;
 
 import java.util.Date;
 import java.util.function.Predicate;
