@@ -9,12 +9,17 @@ import pl.sdacademy.model.OpelCar;
 import pl.sdacademy.model.RenaultCar;
 import pl.sdacademy.utils.TableUtils;
 
+import java.util.ArrayList;
+import java.util.List;
+import pl.sdacademy.lista.Laptop;
+//import pl.sdacademy.lista.List;
+
 public class Main {
 
 	public Main() {
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		System.out.println("Hello!:)");
 
 		Bike marcinsRomet = new Bike();
@@ -124,6 +129,23 @@ public class Main {
 		int[] randomTable = tableUtils.generateNumbers(10, 0, 123);
 		Object[] tulipan = { 1, 2, 3 };
 		tableUtils.printStream(tulipan);
+
+		System.out.println();
+		System.out.println("======== prezentacja listy =========");
+
+		// lista napisana przeze mnie; wymaga odkomentowania importu
+		// pl.sdacademy.lista.List i zakomentowania importu import java.util.List 
+		//List<Laptop> lista = new List<Laptop>();
+		
+		//lista wzieta z javy
+		List<Laptop> lista = new ArrayList<>();
+		
+		Laptop laptop1 = new Laptop("Jan");
+		lista.add(laptop1);
+		Laptop laptop2;
+		laptop2 = lista.get(0);
+		lista.toString();
+		System.out.println(laptop2);
 
 	}
 

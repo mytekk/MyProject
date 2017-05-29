@@ -3,7 +3,7 @@ package pl.sdacademy.lista;
 public class ListElement<T> {
 	
 	T value;
-	ListElement<T> ZaczepZTylu;
+	ListElement<T> ZaczepZTylu; //pole klasy jest jednoczesnie obiektem tej samej klasy?
 	ListElement<T> ZaczepZPrzodu;
 	
 	//konstruktor
