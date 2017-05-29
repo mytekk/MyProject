@@ -1,5 +1,6 @@
 package pl.sdacademy.stos;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
@@ -135,6 +136,33 @@ public class IStackTest {
 	public void shouldReturnCorrectSizeForFilledStack() {
 		// given
 		assertTrue(pelenStosLaptopow.size() == maxElement);
+	}
+	
+	/**
+	 * sprawdza czy isEmpty zwraca true jesli nie ma nic wrzuconego na pusty stos
+	 */
+	@Test
+	public void shouldReturnTrueIfThereWereNoValuesPutOnStack() {
+		assertTrue(pustyStosLaptopow.isEmpty());
+	}
+
+	/**
+	 * sprawdza czy isEmpty zwroci false jesli na pusty stos zostalo cos wrzucone
+	 */
+	@Test
+	public void shouldReturnFalseIfPushWasCalledPreviously() {
+		pustyStosLaptopow.push(new Laptop("Madzia"));
+		assertFalse(pustyStosLaptopow.isEmpty());
+	}
+
+	/**
+	 * sprawdza czy isEmpty zwroci true jesli na pusty stos wrzucilismy i sciagnelismy jakis element
+	 */
+	@Test
+	public void shouldReturnTrueIfElementWasPushedAndPoped() {
+		pustyStosLaptopow.push(new Laptop("Jula"));
+		pustyStosLaptopow.pop();
+		assertTrue(pustyStosLaptopow.isEmpty());
 	}
 
 }
