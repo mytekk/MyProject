@@ -1,6 +1,6 @@
 package pl.sdacademy.stos;
 
-public interface IStack<T> {
+public interface IGenericStack<T> {
 
 	void push(T element);
 

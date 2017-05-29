@@ -9,11 +9,11 @@ import org.junit.Test;
 public class IStackTest {
 
 	int maxElement; // dlugosc stosu
-	IStack<Laptop> stosLaptopow;
-	IStack<Laptop> pelenStosLaptopow; // zakladamy, ze pelen stos jest
+	IGenericStack<Laptop> stosLaptopow; //jakis niepelen stos laptopow
+	IGenericStack<Laptop> pelenStosLaptopow; // zakladamy, ze pelen stos jest
 										// faktycznie pelen i ze ma rozmiar
 										// maxElement
-	IStack<Laptop> pustyStosLaptopow; // zakladamy, ze pusty stos jest
+	IGenericStack<Laptop> pustyStosLaptopow; // zakladamy, ze pusty stos jest
 										// faktycznie pusty
 	boolean result;
 
@@ -22,6 +22,17 @@ public class IStackTest {
 
 		maxElement = 3;
 		result = false;
+		
+		stosLaptopow = new GenericStack(maxElement, Laptop.class);
+		Laptop nowyLaptop = new Laptop("Ania");
+		stosLaptopow.push(nowyLaptop);
+		
+		pelenStosLaptopow = new GenericStack(maxElement, Laptop.class);
+		pelenStosLaptopow.push(new Laptop("Jerzy"));
+		pelenStosLaptopow.push(new Laptop("Jose"));
+		pelenStosLaptopow.push(new Laptop("Brajan"));
+		
+		pustyStosLaptopow = new GenericStack(maxElement, Laptop.class);
 	}
 
 	/**
@@ -33,9 +44,9 @@ public class IStackTest {
 		Laptop laptopJana = new Laptop("Jan"); // element do dodania
 
 		// when
-		if (stosLaptopow.isEmpty()) { // probuj wrzucic kiedy stos jest pusty
-			stosLaptopow.push(laptopJana); // wrzucam element na stos
-			Laptop laptopPierwszyZGory = stosLaptopow.peek();
+		if (pustyStosLaptopow.isEmpty()) { // probuj wrzucic kiedy stos jest pusty
+			pustyStosLaptopow.push(laptopJana); // wrzucam element na stos
+			Laptop laptopPierwszyZGory = pustyStosLaptopow.peek();
 			result = laptopJana.equals(laptopPierwszyZGory); // porównanie
 																// referencji o
 																// nazwie tem
