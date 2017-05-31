@@ -1,4 +1,4 @@
-package pl.sdacademy.model;
+package pl.sdacademy.predicate;
 
 import java.util.function.Predicate;
 

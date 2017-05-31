@@ -2,7 +2,7 @@ package pl.sdacademy.predicate;
 
 import java.util.function.Predicate;
 
-public class PredicateExample {
+public class PredicateSimpleExample {
 
 	public static void main(String[] args) {
 

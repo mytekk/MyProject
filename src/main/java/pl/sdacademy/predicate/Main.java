@@ -1,4 +1,4 @@
-package pl.sdacademy.model;
+package pl.sdacademy.predicate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +23,7 @@ public class Main {
 		Kursant kursant8 = new Kursant("Slawek", "Nowak", 15, Plec.MEZCZYNA, Miasto.POZNAN);
 		Kursant kursant9 = new Kursant("Piotr", "Nowak", 6, Plec.MEZCZYNA, Miasto.POZNAN);
 		Kursant kursant10 = new Kursant("Marcin", "Nowak", 21, Plec.MEZCZYNA, Miasto.POZNAN);
+		Kursant kursant11 = new Kursant("Anna", "Lipa", 26, Plec.KOBIETA, Miasto.POZNAN);
 		listaKursantow.add(kursant1);
 		listaKursantow.add(kursant2);
 		listaKursantow.add(kursant3);
@@ -33,6 +34,7 @@ public class Main {
 		listaKursantow.add(kursant8);
 		listaKursantow.add(kursant9);
 		listaKursantow.add(kursant10);
+		listaKursantow.add(kursant11);
 
 		Predykaty predykaty = new Predykaty();
 		

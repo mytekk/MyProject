@@ -1,4 +1,4 @@
-package pl.sdacademy.model;
+package pl.sdacademy.predicate;
 
 import pl.sdacademy.enums.Miasto;
 import pl.sdacademy.enums.Plec;
