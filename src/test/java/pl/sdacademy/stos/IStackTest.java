@@ -23,7 +23,10 @@ public class IStackTest {
 		maxElement = 3;
 		result = false;
 
-		stosLaptopow = new GenericStack(maxElement, Laptop.class);
+		stosLaptopow = new GenericStack<Laptop>(maxElement, Laptop.class);
+		//powyzej moja propozycja rozwiazania warningu z definicji
+		//zmiennych pelenStosLaptopow i pustyStosLaptopow
+		
 		Laptop nowyLaptop = new Laptop("Ania");
 		stosLaptopow.push(nowyLaptop);
 
